@@ -17,9 +17,6 @@ def binario_a_real(bin_str):
 def crear_individuo():
     return ''.join(random.choice('01') for _ in range(longitud_cromosoma))
 
-# Población inicial
-poblacion = [crear_individuo() for _ in range(tamaño_poblacion)]
-
 # Evaluar aptitud
 def aptitud(individuo):
     x = binario_a_real(individuo)
@@ -44,6 +41,9 @@ def mutar(individuo):
         else:
             nuevo += bit
     return nuevo
+
+# Población inicial
+poblacion = [crear_individuo() for _ in range(tamaño_poblacion)]
 
 # Evolución
 mejores = []
